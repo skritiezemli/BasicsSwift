@@ -44,7 +44,9 @@ struct Queue<T: Comparable>: CustomStringConvertible {
 //    }
     
     func filter(item: T) -> [T] {
-        return items.filter {$0 == item}
+        return items.filter {(element: T) -> Bool in
+            return element == item
+        }
     }
 }
 
